@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+	<meta charset="utf-8">
+	<title>Kalkulator Wody</title>
+	<meta name="description" content="OPIS - MAKSYMALNIE 50 znaków">
+	<meta name="keywords" content="SŁOWA KLUCZOWE">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="dcterms.description" lang="pl" content="Super hiper wpis na temat czegokolwiek">
+	<meta name="dcterms.subject" lang="pl" content="Bardzo ważne słowa kluczowe; rozdzielone średnikiem">
+
+	<!-- CSS, RESPONSIVE, FONT -->
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600" rel="stylesheet">
+	<link rel="manifest" href="manifest.json">
+	<script src="calculator.js"></script>
+
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta name="apple-mobile-web-app-title" content="Kalkulator Wody">
+	<meta name="application-name" content="Kalkulator Wody">
+
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0876a5">
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+	<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<article class="article">
+		<div class="wrapper">
+			<h1 class="article__logo">Kalkulator Wody</h1>
+			<div class="article__box">
+
+				<div class="form">
+					<label for="waga" class="form__label">Waga (kg)</label>
+					<input type="number" id="waga" class="form__input" placeholder="Wpisz wagę" required aria-required="true">
+				</div>
+
+				<div class="form">
+					<label for="wysilek" class="form__label">Czas dziennego wysiłku (min)</label>
+					<select id="wysilek">
+						<option value="1">0</option>
+						<option value="2">20</option>
+						<option value="3">40</option>
+						<option value="4">60</option>
+					</select>
+				</div>
+
+				<input type="submit" value="OBLICZ ZAPOTRZEBOWANIE" onclick="oblicz()">
+
+				<div class="line"></div>
+
+				<h2 class="box__header">Dzienne zapotrzebowanie na wodę:</h2>
+
+				<div class="area">
+					<div class="area__contents">Litry
+						<svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
+							<title>Kropla</title>
+							<path d="M432.313 236.581c-32.877-91.72-102.555-174.075-176.313-236.581-73.758 62.506-143.435 144.861-176.313 236.581-20.332 56.718-22.341 118.281 6.292 172.7 32.923 62.57 99.316 102.719 170.021 102.719s137.098-40.149 170.020-102.72c28.635-54.419 26.625-115.981 6.293-172.699zM369.382 379.478c-21.901 41.626-66.406 68.522-113.382 68.522-27.56 0-54.262-9.268-76.056-25.326 6.621 0.862 13.316 1.326 20.056 1.326 58.713 0 114.334-33.607 141.701-85.621 22.439-42.646 20.489-86.924 11.941-122.169 7.279 14.075 13.453 28.099 18.424 41.966 11.303 31.531 20.012 78.17-2.684 121.302z"></path>
+						</svg>
+					</div>
+					<div class="area__result" id="litry"></div>
+				</div>
+				<div class="area">
+					<div class="area__contents">Szklanki
+						<svg class="icon" viewBox="0 0 512 512" aria-hidden="true">
+							<title>Szklanka</title>
+							<path d="M480 160h-96v-48c0-44.183-85.961-80-192-80s-192 35.817-192 80v320c0 44.183 85.961 80 192 80s192-35.817 192-80v-48h96c17.673 0 32-14.327 32-32v-160c0-17.673-14.327-32-32-32zM88.028 129.199c-18.497-6.095-29.704-12.623-35.705-17.199 6.002-4.576 17.208-11.104 35.705-17.199 28.971-9.545 65.895-14.801 103.972-14.801s75.002 5.256 103.972 14.801c18.497 6.094 29.704 12.623 35.705 17.199-6.001 4.576-17.208 11.104-35.705 17.199-28.97 9.545-65.895 14.801-103.972 14.801s-75.001-5.256-103.972-14.801zM448 320h-64v-96h64v96z"></path>
+						</svg>
+					</div>
+					<div class="area__result" id="szklanki"></div>
+				</div>
+			</div>
+		</div>
+	</article>
+	<footer class="footer">
+		Konrad Bednarek © 2018
+	</footer>
+
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function () {
+				navigator.serviceWorker.register('sw.js').then(function (registration) {
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				}, function (err) {
+					console.log('ServiceWorker registration failed: ', err);
+				});
+			});
+		}
+	</script>
+</body>
+
+</html>

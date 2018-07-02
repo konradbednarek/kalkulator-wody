@@ -1,0 +1,262 @@
+/*===================================================================================*/
+
+/*	RESET.CSS
+/*===================================================================================*/
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+p,
+a,
+img,
+ul,
+li,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+/*===================================================================================*/
+
+/*	USTAWIENIA STRONY
+/*===================================================================================*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: url(img/background.jpg) center/cover no-repeat;
+  color: #0876A5;
+}
+
+body a {
+  text-decoration: none;
+  color: #0876A5;
+}
+
+.article {
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer {
+  height: 9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  color: #ffffff;
+}
+
+.article__logo {
+  font-size: 2em;
+  margin: 0.3em 0.5em;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.article__box {
+  padding: 2em;
+  background: #ffffff;
+  border-radius: 1em;
+}
+
+.form:first-child {
+  margin: 0 0 1em 0;
+}
+
+.form {
+  margin: 1em 0;
+}
+
+.form__label {
+  display: block;
+  font-size: 1.1em;
+  text-align: left;
+  font-weight: 600;
+  margin: 0.3em 0;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  padding: 0.4em;
+  font-size: 1em;
+  border: 1px solid #c9c9c9;
+  transition: all 0.2s ease-in-out;
+}
+
+.form__input:focus {
+  border-color: #0876A5;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.placeholder::placeholder {
+  color: red;
+  transition: all 0.2s ease-in-out;
+}
+
+select {
+  display: block;
+  width: 100%;
+  outline: none;
+  border-radius: 3px;
+  padding: 0.4em;
+  font-size: 1em;
+  border: 1px solid #c9c9c9;
+  transition: all 0.2s ease-in-out;
+}
+
+select:focus {
+  border-color: #0876A5;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+input[type=submit] {
+  width: 100%;
+  background: #0876A5;
+  color: #ffffff;
+  border: none;
+  padding: 1em;
+  border-radius: 2em;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+input[type=submit]:hover {
+  background: #06597C;
+}
+
+.line {
+  margin: 1em 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.box__header {
+  font-weight: 600;
+}
+
+.area {
+  display: flex;
+  margin: 0.5em 1em;
+  text-align: left;
+}
+
+.area__contents {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  margin-left: 2px;
+  fill: #0876A5;
+}
+
+.area__result {
+  flex: 1;
+}
+
+/*===================================================================================*/
+
+/*	RESPONSIVE 576px
+/*===================================================================================*/
+
+@media (max-width: 1024px) and (min-width: 576px) {
+  html {
+    font-size: 18px;
+  }
+  .article {
+    height: 93vh;
+  }
+  .footer {
+    height: 7vh;
+  }
+}
+
+/*===================================================================================*/
+
+/*	RESPONSIVE 1025px - 1500px
+/*===================================================================================*/
+
+@media (max-width: 1500px) and (min-width: 1025px) {
+  html {
+    font-size: 17px;
+  }
+  .article {
+    height: 94vh;
+  }
+  .footer {
+    height: 6vh;
+  }
+}
+
+/*===================================================================================*/
+
+/*	RESPONSIVE 1025px - 1500px
+/*===================================================================================*/
+
+@media (min-width: 1501px) {
+  html {
+    font-size: 17px;
+  }
+  .article {
+    height: 94vh;
+  }
+  .footer {
+    height: 6vh;
+  }
+}
